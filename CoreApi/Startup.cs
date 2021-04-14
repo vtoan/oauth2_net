@@ -66,6 +66,22 @@ namespace CoreApi
                     options.ClientId = "copy client ID from Google here";
                     options.ClientSecret = "copy client secret from Google here";
                 });
+
+            services
+               .AddAuthentication()
+               .AddLocalApi("Bearer", options =>
+               {
+                   options.ExpectedScope = "scope2";
+               });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Bearer", policy =>
+                {
+                    policy.AddAuthenticationSchemes("Bearer");
+                    policy.RequireAuthenticatedUser();
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app)
