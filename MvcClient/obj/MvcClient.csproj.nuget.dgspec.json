@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj": {}
+    "c:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj": {
+    "c:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj",
+        "projectUniqueName": "c:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj",
         "projectName": "MvcClient",
-        "projectPath": "C:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj",
+        "projectPath": "c:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\MvcClient.csproj",
         "packagesPath": "C:\\Users\\Toan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\obj\\",
+        "outputPath": "c:\\Users\\Toan\\Documents\\Src\\OAuth2_NET\\MvcClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Toan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
