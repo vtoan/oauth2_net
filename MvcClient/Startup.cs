@@ -24,6 +24,35 @@ namespace MvcClient
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = "Cookies";
+                options.DefaultChallengeScheme = "oidc";
+            })
+                .AddCookie("Cookies")
+                .AddOpenIdConnect("oidc", options =>
+                {
+                    options.Authority = "https://localhost:5001";
+                    // options.RequireHttpsMetadata = false;
+                    // options.GetClaimsFromUserInfoEndpoint = true;
+
+                    options.ClientId = "mvc";
+                    options.ClientSecret = "serect";
+                    options.ResponseType = "code";
+
+                    options.SaveTokens = true;
+
+                    options.Scope.Add("openid");
+                    options.Scope.Add("profile");
+                    options.Scope.Add("scope2");
+
+                    // options.TokenValidationParameters = new TokenValidationParameters
+                    // {
+                    //     NameClaimType = "name",
+                    //     RoleClaimType = "role"
+                    // };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +73,7 @@ namespace MvcClient
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
