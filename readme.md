@@ -14,4 +14,6 @@
 ``` dotnet aspnet-codegenerator identity -dc MyApplication.Data.ApplicationDbContext --files "Account.Register;" ```
 
 *   Add Razor to ServiceCollection & Middleware
+
+Reference: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-5.0&tabs=netcore-cli
   
