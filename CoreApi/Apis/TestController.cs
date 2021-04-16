@@ -21,6 +21,7 @@ namespace CoreApi.Apis
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
